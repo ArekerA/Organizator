@@ -16,6 +16,12 @@
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Person.FirstName) @Html.DisplayFor(model => model.Person.LastName)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Columns)
+        </dd>
     </dl>
 </div>
 <div>

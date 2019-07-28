@@ -17,6 +17,7 @@ namespace Organizator.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<CardLabel>().HasKey(sc => new { sc.CardId, sc.LabelId });
         }
         public DbSet<Organizator.Models.Table> Table { get; set; }
     }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Organizator.Data;
 
 namespace Organizator.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190728103645_Database")]
+    partial class Database
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,28 +231,6 @@ namespace Organizator.Data.Migrations
                     b.ToTable("Column");
                 });
 
-            modelBuilder.Entity("Organizator.Models.Comment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CardId");
-
-                    b.Property<string>("Date");
-
-                    b.Property<string>("PersonId");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CardId");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Comment");
-                });
-
             modelBuilder.Entity("Organizator.Models.Label", b =>
                 {
                     b.Property<int>("Id")
@@ -370,18 +350,6 @@ namespace Organizator.Data.Migrations
                         .WithMany("Columns")
                         .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Organizator.Models.Comment", b =>
-                {
-                    b.HasOne("Organizator.Models.Card", "Card")
-                        .WithMany("Comments")
-                        .HasForeignKey("CardId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Organizator.Models.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId");
                 });
 
             modelBuilder.Entity("Organizator.Models.Label", b =>
