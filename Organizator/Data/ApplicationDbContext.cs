@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Organizator.Models;
 
 namespace Organizator.Data
 {
@@ -12,5 +13,11 @@ namespace Organizator.Data
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+        public DbSet<Organizator.Models.Table> Table { get; set; }
     }
 }
