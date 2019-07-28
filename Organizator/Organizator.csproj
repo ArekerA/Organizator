@@ -6,9 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20190728090918_TableTest.cs" />
+    <Compile Remove="Data\Migrations\20190728090918_TableTest.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190728091625_TableTest2.cs" />
+    <Compile Remove="Data\Migrations\20190728091625_TableTest2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190728093831_TableTest3.cs" />
+    <Compile Remove="Data\Migrations\20190728093831_TableTest3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190728094026_TableTest4.cs" />
+    <Compile Remove="Data\Migrations\20190728094026_TableTest4.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190728094258_TableTest5.cs" />
+    <Compile Remove="Data\Migrations\20190728094258_TableTest5.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190728095831_NewInitial.cs" />
+    <Compile Remove="Data\Migrations\20190728095831_NewInitial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="2.1.11" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
   </ItemGroup>
 
 </Project>
